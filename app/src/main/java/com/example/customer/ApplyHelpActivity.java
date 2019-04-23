@@ -33,6 +33,10 @@ public class ApplyHelpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply_help);
 
+        //Navigation
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigationApply);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //button Apply Now
         Button btnApplyNow=findViewById(R.id.btnApplyNow);
         btnApplyNow.setOnClickListener(new View.OnClickListener() {
             @Override
