@@ -102,9 +102,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
-                android:layout_marginEnd="10dp"
                 android:fontFamily="sans-serif"
                 android:text="Connect to the application of Easy Eat and directly from the armchair or sofa of your home, order the dishes you prefer from your trusted restaurants."
                 android:textAlignment="textStart"
