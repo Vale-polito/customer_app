@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditActivity"
+    android:background="@color/grayLight"
+    android:orientation="vertical"
+    android:id="@+id/scrollView1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linear_edit_port"
+            android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/linear_edit_port"
+                    android:background="@drawable/background_gradient"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorToolbar"
+                        app:popupTheme="@mipmap/ic_launcher"
+                        app:title="@string/app_name"
+                        app:titleTextColor="@color/colorWhite" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/viewImage"
+                            android:layout_width="@dimen/img_pp_main"
+                            android:layout_height="@dimen/img_pp_main"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="@string/Img_des"
+                            android:src="@drawable/ic_account" />
+
+                        <ImageButton
+                            android:id="@+id/btnSelectPhoto"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignEnd="@+id/viewImage"
+                            android:layout_alignBottom="@+id/viewImage"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/img_button"
+                            android:src="@drawable/ic_camera_alt_black_24dp"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:maxLength="21"
+                    android:inputType="textPersonName"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:textSize="@dimen/font_size" />
+                <EditText
+                    android:id="@+id/etLastname"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="@string/Last_name"
+                    android:maxLength="21"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:textSize="@dimen/font_size" />
+                <EditText
+                    android:id="@+id/etMail"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mail"
+                    android:maxLength="26"
+                    android:inputType="textEmailAddress"
+                    android:drawableStart="@drawable/ic_mail_outline_black_24dp"
+                    android:textSize="@dimen/font_size" />
+
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Phone_number"
+                    android:inputType="phone"
+                    android:maxLength="16"
+                    android:drawableStart="@drawable/ic_tablet_android_black_24dp"
+                    android:textSize="@dimen/font_size" />
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/ic_home_black_24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLength="36"
+                    android:hint="@string/Delivery_address"
+                    android:textSize="@dimen/font_size" />
+
+                <LinearLayout
+                    android:id="@+id/layoutDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_insert_comment_black_24dp" />
+
+                    <EditText
+                        android:id="@+id/etDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Description"
+                        android:maxLength="70"
+                        android:inputType="textMultiLine"
+                        android:paddingStart="5dp"
+                        android:textSize="@dimen/font_size" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="6"
+                   >
+
+                    <Button
+                        android:id="@+id/btnConfirm"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_button"
+                        android:text="@string/confirm"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_size" />
+                    <EditText
+                        android:id="@+id/edt"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="10dp" />
+
+                    <Button
+                        android:id="@+id/btnCancel"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_button"
+                        android:gravity="center"
+                        android:text="@string/cancel"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_size" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+

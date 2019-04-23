@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Customer Profile</string>
+    <string name="edit">Edit</string>
+    <string name="camera">Camera</string>
+    <string name="motto">Live your life</string>
+    <string name="Gallery">Gallery</string>
+    <string name="Remove_photo">Remove photo</string>
+    <string name="Phone_number">Phone number</string>
+    <string name="name">Name</string>
+    <string name="Last_name">Last name</string>
+    <string name="Delivery_address">Delivery address</string>
+    <string name="Description">Description</string>
+    <string name="mail">Mail@mail.com</string>
+    <string name="confirm">Confirm</string>
+    <string name="clear">Clear all</string>
+    <string name="cancel">Cancel</string>
+    <string name="Img_des">Photo of profile</string>
+    <string name="app_title">Easy Eat</string>
+    <string name="back">Back</string>
+</resources>

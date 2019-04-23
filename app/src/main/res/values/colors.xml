@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5B852F</color>
+    <color name="colorPrimaryDark">#FDD835</color>
+    <color name="colorPrimaryLight">#FDD835</color>
+
+    <color name="colorSecondary">#5B852F</color>
+    <color name="colorSecondaryDark">#5B852F</color>
+    <color name="colorSecondaryLight">#ffa270</color>
+    <color name="colorToolbar">#FF3D3737</color>
+    <color name="grayLight">#fafafa</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="button">#A235E5</color>
+    <color name="colorCustomer">#C96c56</color>
+    <color name="lightGrayTransparent">#F1EFEF</color>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_size">21sp</dimen>
+    <dimen name="btn_width">170dp</dimen>
+    <dimen name="btn_margins">30dp</dimen>
+    <dimen name="linear_edit_port">280dp</dimen>
+    <dimen name="img_pp_main">250dp</dimen>
+    <dimen name="relative_main">380dp</dimen>
+    <dimen name="linear_main">350dp</dimen>
+    <dimen name="img_profile_main">150dp</dimen>
+    <dimen name="cardv_width">250dp</dimen>
+    <dimen name="cardv_height">60dp</dimen>
+    <dimen name="cardv_margin_top">320dp</dimen>
+
+</resources>
