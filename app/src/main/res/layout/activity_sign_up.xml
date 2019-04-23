@@ -45,9 +45,6 @@
                     android:layout_height="50dp"
                     android:layout_alignEnd="@+id/imgProfile"
                     android:layout_alignBottom="@+id/imgProfile"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginEnd="1dp"
-                    android:layout_marginBottom="1dp"
                     android:background="@drawable/btn_circle_rider"
                     android:src="@drawable/ic_camera" />
 
@@ -187,17 +184,16 @@
             android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/btnHome"
-
-                android:layout_marginEnd="20dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/btn_circle_rider"
                 android:src="@drawable/ic_home"
                 />
             <ImageButton
                 android:id="@+id/btnConfirm"
                 android:layout_width="50dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="40dp"
                 android:layout_height="50dp"
                 android:background="@drawable/btn_circle_rider"
                 android:src="@drawable/ic_save"
