@@ -15,4 +15,6 @@
     <color name="button">#A235E5</color>
     <color name="colorCustomer">#C96c56</color>
     <color name="lightGrayTransparent">#F1EFEF</color>
+    <color name="overlayBackground">#7F535657</color>
+    <color name="overlayActionBar">#0e0d0e</color>
 </resources>

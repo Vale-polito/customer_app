@@ -16,12 +16,12 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="170dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="80dp"
                 android:background="@color/colorCustomer" />
 
             <RelativeLayout
@@ -35,7 +35,7 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="10dp"
                     android:contentDescription="@string/Img_des"
                     android:src="@drawable/personal" />
 
@@ -174,32 +174,29 @@
 
         </LinearLayout>
 
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:text="Register"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_customer"
 
-        <LinearLayout
-            android:id="@+id/layoutButtons"
+                />
+        <TextView
+            android:id="@+id/tvRegistered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="end"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btnHome"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/btn_circle_rider"
-                android:src="@drawable/ic_home"
-                />
-            <ImageButton
-                android:id="@+id/btnConfirm"
-                android:layout_width="50dp"
-                android:layout_marginEnd="40dp"
-                android:layout_height="50dp"
-                android:background="@drawable/btn_circle_rider"
-                android:src="@drawable/ic_save"
-                />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Already registered? Log in!"
+            android:textColor="@color/colorCustomer"
+            android:textSize="17sp" />
 
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>
 
