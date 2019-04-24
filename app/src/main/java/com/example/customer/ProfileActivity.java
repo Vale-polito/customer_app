@@ -1,8 +1,12 @@
 package com.example.customer;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +31,13 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
+        //***********start of code related to create a toolbar
+        //we have to write codes in different functions
+        Toolbar toolbar = findViewById(R.id.toolbarEdit);
+        setSupportActionBar(toolbar);
+        //end of code related to toolbar
+
         //
         tvName=findViewById(R.id.tvName);
         tvEmail=findViewById(R.id.tvMail);
@@ -39,10 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
         //get reference
-        //String path=firebaseAuth.getUid();
-       // String path1="CustomersProfile/"+firebaseAuth.getUid();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("CustomersProfile");
-        //DatabaseReference databaseReference1 = databaseReference.child(firebaseAuth.getUid());
         databaseReference.child(firebaseAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -67,4 +75,24 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
     }
+    //**************These codes belong to what toolbar is doing
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.editmenu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle toolbar item clicks here.
+        int id = item.getItemId();
+        //If Edit_button has been pressed go to the Edit activity
+        if (id == R.id.btn_edit) {
+            Intent i = new Intent(this, EditProfileActivity.class);
+           startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    //End of code related to the toolbar
+
 }

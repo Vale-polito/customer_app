@@ -422,7 +422,6 @@ public class SignUpActivity extends AppCompatActivity {
                             CustomersProfile customersProfile = new CustomersProfile();
                             customersProfile.setName(name);
                             customersProfile.setEmail(email);
-                            customersProfile.setPassword(password);
                            customersProfile.setPhone(phone);
                             customersProfile.setAddress(address);
                             customersProfile.setShortdescription(description);
@@ -491,7 +490,7 @@ public class SignUpActivity extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         //will save it under Uid
         DatabaseReference myRef= firebaseDatabase.getReference(mAuth.getUid());
-        CustomersProfile customersProfile= new CustomersProfile(txt_Name.getText().toString().trim(),txt_Phone.getText().toString().trim(),txt_Mail.getText().toString().trim(),txt_Password.getText().toString().trim(),txt_Address.getText().toString().trim(),txt_Description.getText().toString().trim(),String.valueOf(image_uri));
+        CustomersProfile customersProfile= new CustomersProfile(txt_Name.getText().toString().trim(),txt_Phone.getText().toString().trim(),txt_Mail.getText().toString().trim(),txt_Address.getText().toString().trim(),txt_Description.getText().toString().trim(),String.valueOf(image_uri));
 
         myRef.setValue(customersProfile);
 

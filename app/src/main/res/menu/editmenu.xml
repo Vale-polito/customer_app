@@ -6,7 +6,7 @@ tools:context="com.example.test1.MainActivity">
 >
 <item
     android:id="@+id/btn_edit"
-    android:icon="@drawable/ic_create_black_24dp"
+    android:icon="@drawable/ic_edit"
     android:title="@string/edit"
     app:showAsAction="always" />
 </menu>
