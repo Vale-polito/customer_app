@@ -3,13 +3,13 @@ package com.example.customer;
 
 public class DailyOffer {
     //Property name must be the same as what we defined in real time database
-    private String name, price, discount, availablequantity, shortdescription;
+    private String name, price, discount, shortdescription;
     private String imageUrl;
     public DailyOffer() {
         //Constructor , it is needed
     }
 
-    public DailyOffer(String name, String price, String discount, String availablequantity, String shortdescription, String imageUrl) {
+    public DailyOffer(String name, String price, String discount, String shortdescription, String imageUrl) {
         if (discount.trim().equals("")) {
             this.discount = "0";
         } else this.discount = discount;
@@ -20,7 +20,6 @@ public class DailyOffer {
         if (shortdescription.trim().equals("")) {
             this.shortdescription = "Information is not provided";
         } else this.shortdescription = shortdescription;
-        this.availablequantity = availablequantity;
     }
 
     public String getName() {
@@ -45,15 +44,6 @@ public class DailyOffer {
     }
 
 
-
-
-
-    public String getAvailablequantity() {
-        return availablequantity;
-    }
-    public void setAvailablequantity(String availablequantity) {
-        this.availablequantity = availablequantity;
-    }
 
     public String getShortdescription() {
         return shortdescription;

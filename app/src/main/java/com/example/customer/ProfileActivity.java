@@ -2,6 +2,7 @@ package com.example.customer;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,6 +21,31 @@ import com.squareup.picasso.Picasso;
 import android.widget.ImageView;
 
 public class ProfileActivity extends AppCompatActivity {
+
+    //Navigation
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.sign_out:
+                    firebaseAuth.signOut();
+                    finish();
+                    startActivity(new Intent(ProfileActivity.this,LoginActivity.class));
+                    return true;
+                case R.id.cart:
+
+                    return true;
+                case R.id.menu:
+                    Intent  intent = new Intent(ProfileActivity.this, Home.class);
+                    startActivity(intent);
+                    return true;
+            }
+            return false;
+        }
+    };
+    //................
     TextView tvName,tvEmail,tvAddress,tvPhone,tvDescription;
     de.hdodenhof.circleimageview.CircleImageView imgProfile;
 
@@ -30,7 +56,9 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        //Navigation
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_profile);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //***********start of code related to create a toolbar
         //we have to write codes in different functions
