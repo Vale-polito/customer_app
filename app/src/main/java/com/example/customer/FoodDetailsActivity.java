@@ -116,8 +116,8 @@ public class FoodDetailsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 DailyOffer dailyOffer=dataSnapshot.getValue(DailyOffer.class);
                 NameofFood.setText(dailyOffer.getName());
-                DiscountOfFood.setText(dailyOffer.getDiscount());
-                PriceOfFood.setText(dailyOffer.getPrice());
+                DiscountOfFood.setText(dailyOffer.getDiscount()+"% (Off) • ");
+                PriceOfFood.setText(dailyOffer.getPrice()+" € •");
                 DescriptionOfFood.setText(dailyOffer.getShortdescription());
 
                 Picasso.get()

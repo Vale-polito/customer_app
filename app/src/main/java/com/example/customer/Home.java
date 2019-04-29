@@ -39,6 +39,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Easy Eat");
         setSupportActionBar(toolbar);
@@ -165,9 +166,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         int id = item.getItemId();
         if (id == R.id.nav_log_out) {
             // Handle the log out
-                firebaseAuth.signOut();
-                finish();
-                startActivity(new Intent(Home.this,LoginActivity.class));
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(Home.this,LoginActivity.class));
 
         }
         if (id == R.id.nav_profile) {
