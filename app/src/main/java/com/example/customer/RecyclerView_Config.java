@@ -45,6 +45,16 @@ public class RecyclerView_Config {
             mShortdescription=  itemView.findViewById(R.id.txt_ShortDescription);
             mImgfood= itemView.findViewById(R.id.img_Food);
 
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext,FoodDetailsActivity.class);
+                    intent.putExtra("key",key);
+                    mContext.startActivity(intent);
+                }
+            });
+
         }
         public void bind(DailyOffer dailyOffer, String key) {
 

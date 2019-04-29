@@ -15,6 +15,7 @@
     <color name="colorCustomer">#C96c56</color>
     <color name="colorCustomerTransparent">#BAC96C56</color>
     <color name="lightGrayTransparent">#80F1EFEF</color>
+    <color name="darkGray">#979292</color>
     <color name="darkGrayTransparent">#80413D3D</color>
     <color name="lightGray">#F8F1EFEF</color>
     <color name="overlayBackground">#7F535657</color>

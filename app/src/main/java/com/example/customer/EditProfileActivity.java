@@ -312,6 +312,15 @@ public class EditProfileActivity extends AppCompatActivity {
                 Toast.makeText(EditProfileActivity.this,databaseError.getCode(),Toast.LENGTH_LONG).show();
             }
         });
+        Button btn_Back=findViewById(R.id.btnBack);
+        btn_Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(EditProfileActivity.this,ProfileActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 
