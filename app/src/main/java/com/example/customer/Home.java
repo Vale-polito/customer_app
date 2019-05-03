@@ -51,8 +51,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent addCartIntent = new Intent(getApplicationContext(), CartActivity.class);
+                startActivity(addCartIntent);
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
             }
         });
 
@@ -76,12 +78,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 CustomersProfile customersProfile=dataSnapshot.getValue(CustomersProfile.class);
                 txtFullNameNav.setText(customersProfile.getName());
-                Picasso.get()
+                /*Picasso.get()
                         .load(customersProfile.getImageUrl())
                         .placeholder(R.drawable.personal)
                         .fit()
                         .centerCrop()
-                        .into(imgProfileNav);
+                        .into(imgProfileNav);*/
             }
 
             @Override

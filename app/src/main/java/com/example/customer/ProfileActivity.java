@@ -88,12 +88,12 @@ public class ProfileActivity extends AppCompatActivity {
                 tvPhone.setText(customersProfile.getPhone());
                 tvEmail.setText(customersProfile.getEmail());
                 tvDescription.setText(customersProfile.getShortdescription());
-                Picasso.get()
+                /*Picasso.get()
                         .load(customersProfile.getImageUrl())
                         .placeholder(R.drawable.personal)
                         .fit()
                         .centerCrop()
-                        .into(imgProfile);
+                        .into(imgProfile);*/
             }
 
             @Override

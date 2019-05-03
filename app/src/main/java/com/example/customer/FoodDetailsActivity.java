@@ -5,9 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,10 +26,14 @@ public class FoodDetailsActivity extends AppCompatActivity {
     private int i;
     String key;
     DatabaseReference databaseReference;
+    DatabaseReference databaseItems;
+
     TextView tvCounter;
+    Button btnAdd;
     ImageButton btnDecrease;
     TextView NameofFood,PriceOfFood,DiscountOfFood,DescriptionOfFood;
     ImageView imgFoodDetails;
+    ItemsOrdered newItemOrdered;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +45,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         DiscountOfFood=findViewById(R.id.DiscountOfFood);
         DescriptionOfFood=findViewById(R.id.DescriptionOfFood);
         imgFoodDetails=findViewById(R.id.imgFoodDetails);
+        btnAdd = findViewById(R.id.btnAdd);
         readInfo(key);
 
 
@@ -69,6 +76,27 @@ public class FoodDetailsActivity extends AppCompatActivity {
                 if (i==0) btnDecrease.setEnabled(false); else btnDecrease.setEnabled(true);
                 i++;
                 tvCounter.setText(""+i);
+            }
+        });
+
+
+        databaseItems = FirebaseDatabase.getInstance().getReference("itemsOrdered");
+
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newItemOrdered.setQuantity(i);
+                if(newItemOrdered.getQuantity()>0) {
+                    // CHANGE THIS TO ACTUALLY INSERT THE DATA IN THE DATABASE
+                    // THE CART WILL BE OPENED WHILE PRESSING THE CART BUTTON, NOT WHILE ADDING AN ITEM
+                    addItem(newItemOrdered);
+                    /*Intent addCartIntent = new Intent(getApplicationContext(), CartActivity.class);
+                    addCartIntent.putExtra("itemsOrdered", newItemOrdered);
+                    startActivity(addCartIntent);*/
+                }else{
+                    Toast.makeText(getApplicationContext(), "Wrong quantity chosen!", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -126,13 +154,33 @@ public class FoodDetailsActivity extends AppCompatActivity {
                         .fit()
                         .centerCrop()
                         .into(imgFoodDetails);
+
+
+                /* Create an item ordered based on the daily offer and the quantity clicked*/
+                newItemOrdered = new ItemsOrdered(dailyOffer.getName(), Integer.parseInt(dailyOffer.getPrice()),0, Double.parseDouble(dailyOffer.getDiscount()), dailyOffer.getShortdescription());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(FoodDetailsActivity.this,databaseError.getCode(),Toast.LENGTH_LONG).show();
             }
+
+
         });
+
+    }
+
+    /* Method to add item to the database to fill in the cart
+     */
+    private void addItem(ItemsOrdered currentitem){
+        if(!TextUtils.isEmpty(currentitem.getName())){
+            String name = databaseItems.push().getKey();
+            databaseItems.child(name).setValue(currentitem);
+            Toast.makeText(getApplicationContext(), "Item added to cart", Toast.LENGTH_LONG).show();
+
+        }else{
+            Toast.makeText(getApplicationContext(), "Error in the submission", Toast.LENGTH_LONG).show();
+        }
 
     }
 
